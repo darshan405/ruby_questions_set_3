@@ -68,3 +68,91 @@
 	# , State: Karnataka
 
 
+# class Employee
+# 	def person
+# 		puts "Enter the firstname:"
+# 		@fname=gets
+# 		puts "Enter the lastname:"
+# 		@lname=gets
+# 		puts "Enter age:"
+# 		@age=Integer(gets)
+# 		puts "Enter city:"
+# 		@city=gets
+# 		puts "Enter state"
+# 		@state=gets
+# 	end
+# end
+# class President < Employee
+# 		def person
+# 			super
+# 			puts "Name:#{@fname} #{@lname}"
+# 			puts "Age:#{@age}"
+# 			puts "city:#{@city},state:#{@state}"
+# 		end
+# end
+# class Staff < Employee
+# 		def person
+# 			super
+# 			puts "Name:#{@fname} #{@lname}"
+# 			puts "Age:#{@age}"
+# 			puts "city:#{@city},state:#{@state}"
+# 		end
+# end
+
+# puts "====President====="
+# p = President.new
+# p.person
+# puts "=====Staff====="
+# s = Staff.new
+# s.person
+
+class Employee
+    def staff_president(person)
+        person.staff_president
+    end
+#     def staff(person)
+#         person.staff
+#     end
+end
+class President
+    def staff_president
+        puts "Enter the firstname:"
+        @fname=gets.chomp
+        puts "Enter the lastname:"
+        @lname=gets.chomp
+        puts "Enter age:"
+        @age=Integer(gets)
+        puts "Enter city:"
+        @city=gets.chomp
+        puts "Enter state"
+        @state=gets.chomp
+        puts "Name:#{@fname} #{@lname}"
+        puts "Age:#{@age}"
+        puts "city:#{@city} state:#{@state}"
+    end
+end
+class Staff
+    def staff_president
+        puts "Enter the firstname:"
+        @fname=gets.chomp
+        puts "Enter the lastname:"
+        @lname=gets.chomp
+        puts "Enter age:"
+        @age=Integer(gets)
+        puts "Enter city:"
+        @city=gets.chomp
+        puts "Enter state"
+        @state=gets.chomp
+        puts "Name:#{@fname} #{@lname}"
+        puts "Age:#{@age}"
+        puts "city:#{@city} state:#{@state}"
+    end
+end
+
+welcome = Employee.new
+puts "=======President========="
+a = President.new
+welcome.staff_president(a)
+puts "========Staff======="
+c= Staff.new
+welcome.staff_president(c)

@@ -22,50 +22,35 @@
 # -----Invalid output------
 
 # completeAddress -> #96, Railway Layout, Vijaynagar
-# 									Mysore
-# 									India
+#                                   Mysore
+#                                   India
 
 
 class Country
-	def initialize
-		puts "This is the Country."
-	end
-
-	def countryName 
-	 # give the country name.
-	end
+    def countryname 
+        @cname="India"
+        puts "countrName:#{@cname}"
+    end
 end
 
-class City
-	def initialize
-		puts "This is the City"
-	end
-
-	# define cityName  --> give the city name
+class City < Country
+  
+    def cityname 
+        @ctyname="Mysore"
+        puts "cityName:#{@ctyname}"
+    end
+end
+class Address < City
+        def streetaddress
+            countryname
+            cityname
+            @stradd="#96, Railway Layout, Vijaynagar"
+            puts "streetaddress:#{@stradd}"
+            puts "complete address:#{@stradd},#{@ctyname},#{@cname}"
+        end
 end
 
-
-class Address < Country
-	def initialize
-		puts "This is my address."
-	end
-
-	# define completeAddress --> complete address. 
-
-end
-
-class Number < City
-	def initialize
-		puts "This is my address."
-	end
-
-	# define streetAddress --> '#96, Railway Layout, Vijaynagar'
-
-	def completeAddress
-		puts streetAddress cityName countryName 
-	end
-end
-
-
+a=Address.new
+a.streetaddress
 
 # instantiate a object and check for all address.
